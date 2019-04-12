@@ -28,7 +28,7 @@ func helloworld(w http.ResponseWriter, r *http.Request) {
 }
 
 func double(w http.ResponseWriter, r *http.Request) {
-	ns := strings.TrimPrefix(r.URL.Path, "/double/")
+	ns := strings.TrimPrefix(r.RequestURI, "localhost:8080/double/")
 	n, err := strconv.Atoi(ns)
 	if err != nil {
 		w.Write([]byte("invalid integer"))
